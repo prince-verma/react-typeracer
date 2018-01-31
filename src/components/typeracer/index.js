@@ -5,10 +5,11 @@ import {TextField} from 'material-ui';
 
 export default class TypeRacer extends Base {
   render() {
-    let {unTypedText, typedText, inputValue} = this.state;
+    let {unTypedText, typedText, inputValue,wpm} = this.state;
 
     return (
       <div className="container">
+        <div>Words per min: {wpm}</div>
         <div className={"textDiv"}>
           <span className={"typedText"}>{typedText}</span>
           <span className={"untypedText"}>{unTypedText}</span>
@@ -20,7 +21,8 @@ export default class TypeRacer extends Base {
             underlineStyle={{borderColor: "#000"}}
             underlineFocusStyle={{borderColor: "#000"}}
             onChange={(e) => this.onChange(e.target.value)}
-            // value={inputValue}
+            onFocus={this.onFocus}
+            value={inputValue}
           />
         }
       </div>
