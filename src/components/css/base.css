@@ -1,36 +1,27 @@
-body{
+body {
     background: #FFFFFF;
 }
+
 .container {
     display: flex;
-    width: 500px;
     height: 500px;
     margin: 25px;
-    padding : 25px;
+    padding: 25px;
     background: #e6e6e6;
-    text-align:justify;
+    flex-direction: column;
+    justify-content: space-around;
 }
 
-.flexRow {
-    display: flex;
-    flex: 1;
-    flex-direction: row;
-}
-.flexRowReverse {
-    display: flex;
-    flex: 1;
+.textDiv {
+    text-align: justify;
+    font-size: 20px;
     flex-direction: row-reverse;
 }
 
-.itemWhite {
-    flex: 1;
-    background-color: #FFFFFF;
-    height:50px;
-    width:50px;
+.typedText {
+    color: #99cc00;
 }
-.itemRed {
-    flex: 1;
-    background-color: red;
-    height:50px;
-    width:50px;
+
+.untypedText {
+    color: #0f0f0f;
 }
