@@ -20,7 +20,7 @@ export default class TypeRacer extends Base {
             underlineStyle={{borderColor: "#000"}}
             underlineFocusStyle={{borderColor: "#000"}}
             onChange={(e) => this.onChange(e.target.value)}
-            value={inputValue}
+            // value={inputValue}
           />
         }
       </div>
