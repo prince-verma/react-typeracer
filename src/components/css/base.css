@@ -1,0 +1,34 @@
+body{
+    background: #FFFFFF;
+}
+.container {
+    display: flex;
+    width: 500px;
+    height: 500px;
+    margin: 25px;
+    background: #e6e6e6;
+}
+
+.flexRow {
+    display: flex;
+    flex: 1;
+    flex-direction: row;
+}
+.flexRowReverse {
+    display: flex;
+    flex: 1;
+    flex-direction: row-reverse;
+}
+
+.itemWhite {
+    flex: 1;
+    background-color: #FFFFFF;
+    height:50px;
+    width:50px;
+}
+.itemRed {
+    flex: 1;
+    background-color: red;
+    height:50px;
+    width:50px;
+}
