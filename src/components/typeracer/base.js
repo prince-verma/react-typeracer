@@ -17,11 +17,28 @@ export default class Base extends React.Component {
     this.timer = undefined;
   }
 
+  async componentWillMount() {
+    try {
+      let result = await Api.get(sampleTextURL);
+      let text = result.text_out ? result.text_out : "";
+      text = text.replace(new RegExp(`</p>|<p>|\n`, 'g'), "");
+
+      text = text.slice(text.indexOf('.') - 5);
+      console.log('-', text);
+      this.allText = text.toString();
+      this.setState({unTypedText: text.toString()})
+    } catch (err) {
+      alert("Error occured in getting data.");
+    }
+  }
+
   onFocus = () => {
-    this.timer = setInterval(() => {
-      this.setState({wpm: this.wordCount});
-      this.wordCount = 0;
-    }, 60 * 1000);
+    if (!this.timer) {
+      this.timer = setInterval(() => {
+        this.setState({wpm: this.wordCount});
+        this.wordCount = 0;
+      }, 60 * 1000);
+    }
   };
 
   onChange = (text) => {
@@ -44,17 +61,4 @@ export default class Base extends React.Component {
       this.timer && clearInterval(this.timer);
     }
   };
-
-  async componentWillMount() {
-    try {
-      let result = await Api.get(sampleTextURL);
-      let text = result.text_out ? result.text_out : "";
-      text = text.replace(new RegExp('<p>|</p>|\n', 'g'), "");
-
-      this.allText = text;
-      this.setState({unTypedText: text.toString()})
-    } catch (err) {
-      alert("Error occured in getting data.");
-    }
-  }
 }

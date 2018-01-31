@@ -5,11 +5,13 @@ import {TextField} from 'material-ui';
 
 export default class TypeRacer extends Base {
   render() {
-    let {unTypedText, typedText, inputValue,wpm} = this.state;
+    let {unTypedText, typedText, inputValue, wpm} = this.state;
 
     return (
       <div className="container">
-        <div>Words per min: {wpm}</div>
+        {
+          unTypedText && <div style={{textAlign: "right"}}>{wpm} WPM</div>
+        }
         <div className={"textDiv"}>
           <span className={"typedText"}>{typedText}</span>
           <span className={"untypedText"}>{unTypedText}</span>
