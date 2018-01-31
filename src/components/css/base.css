@@ -6,7 +6,9 @@ body{
     width: 500px;
     height: 500px;
     margin: 25px;
+    padding : 25px;
     background: #e6e6e6;
+    text-align:justify;
 }
 
 .flexRow {

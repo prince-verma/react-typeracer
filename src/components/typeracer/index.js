@@ -6,7 +6,7 @@ export default class Login extends Base {
   render() {
     return (
       <div className="container">
-        hello
+        {this.state.text}
       </div>
     )
   }

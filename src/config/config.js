@@ -1,0 +1,1 @@
+export const sampleTextURL =  `http://www.randomtext.me/api/`;
